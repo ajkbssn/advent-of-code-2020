@@ -7,7 +7,10 @@ def loadnumbers(filename):
 
 
 def find_two_integers(integerlist,targetsum):
-    for i, integer in enumerate(integerlist):
-        if targetsum-integer in integerlist[i+1:]:
-            return integer, targetsum-integer,i
+    i=0
+    while i < len(integerlist)-1:
+        tmp=integerlist[i]
+        if targetsum-tmp in integerlist[i+1:]:
+            return tmp, targetsum-tmp, i
+        i +=1
     return false            
